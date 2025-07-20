@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: front-and-back
+  labels:
+    app: front
+spec:
+  replicas: 1
+  selector: 
+    matchLabels:
+      app: front
+  template:
+    metadata:
+      labels:
+        app: front
+    spec: 
+      containers:
+        - name: node
+          image: sdmount/k8f:latest
+          ports:
+            - containerPort: 3000
