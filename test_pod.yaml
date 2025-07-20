@@ -5,6 +5,6 @@ metadata:
 spec:
   containers :
   - name: node
-    image: node:lts-alpine3.22
+    image: sdmount/k8f:latest
     ports:
     - containerPort: 3000
