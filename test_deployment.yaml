@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: front-and-back
+  name: jammy-deployment
   labels:
-    app: front
+    app: jammy-server
 spec:
   replicas: 1
   selector: 
     matchLabels:
-      app: front
+      app: jammy-server
   template:
     metadata:
       labels:
-        app: front
+        app: jammy-server
     spec: 
       containers:
         - name: node
-          image: sdmount/k8f:latest
+          image: sdmount/jammy-server
           ports:
-            - containerPort: 3000
+            - containerPort: 22
